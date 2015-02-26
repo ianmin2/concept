@@ -1,0 +1,44 @@
+<?php
+
+	$email = @$_REQUEST['email'];
+	
+	//check to ensure it is not empty
+	if( $email != "" ){
+		
+		//check to ensure that it is a legitimate email address.
+		if( filter_var($email, FILTER_VALIDATE_EMAIL) ){
+
+			//continue to check if the user has a ueab account
+			if ( strpos($email,'@ueab.ac.ke') != false) {
+			   
+				//Give a success message and command				
+				$responseArray = makeResponse("SUCCESS", "Loging you in.", "");
+				echo json_encode($responseArray);
+				
+			}else{
+				
+				//Let the user know that they require a UEAB account to continue with the survey
+				$responseArray = makeResponse("ERROR", "You need a UEAB email address to continue", "");
+				echo json_encode( $responseArray );
+			}
+			
+		}else{			
+			//Let the user know that they require an email account to continue with the survey
+			$responseArray = makeResponse("ERROR", "Please enter a UEAB email address to continue", "");
+			echo json_encode( $responseArray );
+		}
+		
+	}else{	
+		//Let the user know that they require a valid email address to continue with the survey
+		$responseArray = makeResponse("ERROR", "Enter your email address to continue", "");
+		echo json_encode( $responseArray );
+	}
+		
+	function makeResponse($response, $message, $command){
+	
+		return array( "response" => $response, "data" => array( "message" => $message, "command" => $command ) );
+	
+	}
+	
+	
+?>
