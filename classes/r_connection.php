@@ -86,7 +86,7 @@ class connection {
     /** 
      * MAKE A RESPONSE BASING ON THE AVAILABILITY OF THE JSON_CALLBACK VARIABLE 
      * */
-    private final function wrap( $json_encoded_content = '' ){
+    public final function wrap( $json_encoded_content = '' ){
         
         if( $this->json_callback == "" ):
             
@@ -399,7 +399,7 @@ class connection {
     /** 
      * THE API STYLE JSON [optional] RESPONSE FORMULATOR 
      * */
-    private final function makeResponse( $response = '', $message = '', $command = '', $encode = 'true' ){
+    public final function makeResponse( $response = '', $message = '', $command = '', $encode = 'true' ){
         
         if( $encode ):
         

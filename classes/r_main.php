@@ -13,10 +13,10 @@
 	* m4Labs Framework Database connection variables ... and more! */
 error_reporting(0);
 date_default_timezone_set("Africa/Nairobi");
-$this_site = "eleanor/BitsaQuiz";
+//$this_site = "eleanor/concept";
 
-$db = 'web'; $host = 'localhost'; $user = 'web'; 
-$pass = 'web'; //YOUR_DATABASE_PASSWORD_GOES_HERE
+$db = 'traffic'; $host = 'localhost'; $user = 'root'; 
+$pass = '146450f7'; $driver="mysql"; //YOUR_DATABASE_PASSWORD_GOES_HERE
 
 /*
 	* m4Labs FrameworkEnd of database connection variable declaration*/
@@ -25,15 +25,25 @@ if (@$jsoncallback == ""){$jsoncallback = @$_REQUEST['callback'];}
 if(@$id != ''){
 
 // WARNING ONLY ADD PAGES THAT ARE FULLY CLASSES OR PURELY FUNCTIONS TO THIS ARRAY Else Face the wrath of a broken connection 
-	$ids = array('',
-				 't_mailer.php',		//Framework Mailing	Component
-				 'r_obsfucate.php',		//Framework Obsfucation Component
-				 'r_connection.php', 	//Framework Database Manipulation Component
-				 'r_minify.php',		//Framework File Minifying component
-				 'r_cleaner.php',		//Framework File Deletion Component	
-				 'r_redirect.php'		//Framework Page Redirect Cmponent
-				 
-				 );
+    if( $id == "conn"):
+    
+        $ids = array('',
+                 'r_connection.php'
+                );
+      
+    else:
+    
+        $ids = array('',
+                 't_mailer.php',		//Framework Mailing	Component
+                 'r_obsfucate.php',		//Framework Obsfucation Component
+                 'r_connection.php', 	//Framework Database Manipulation Component
+                 'r_minify.php',		//Framework File Minifying component
+                 'r_cleaner.php',		//Framework File Deletion Component	
+                 'r_redirect.php'		//Framework Page Redirect Cmponent
+
+                );
+       
+    endif;
 	
 	//find the position of the given page-id in the above array
 	$pos = array_search($id, $ids);
@@ -61,7 +71,7 @@ if(@$id != ''){
 	if(@$connect){
 		
 		//Establishing a database connection courtesy of the imported  resource files
-		$connection = new connection($db, $host, $user, $pass, $jsoncallback);
+		$connection = new connection($db, $host, $user, $pass, $driver, $jsoncallback);
 		//$respArray = makeResponse("SUCCESS", "SUCCESSFULLY ESTABLISHED A DATABASE CONNECTION", "{alert, iara}");
 		//echo $jsoncallback."(".json_encode($respArray).")";
 		
