@@ -7,8 +7,12 @@
     /* CHECK IF THE OFFICER HAS BEEN DUELY REGISTERED */
     $auth = $connection->num_rows( "SELECT id FROM officers WHERE id=".@$_REQUEST['user']." AND actif=1  LIMIT 1" , false );
 
-    
+//temp
+    echo $connection->printQueryResults("SELECT * FROM drivers", true, true);
+ //eo temp
 
+?>
+<!--
 if( $auth == 1 && @isset($_REQUEST['qr']) ){
         
         $command = @$_REQUEST['command'];
@@ -74,3 +78,6 @@ if( $auth == 1 && @isset($_REQUEST['qr']) ){
     
 
 ?>
+
+
+-->
