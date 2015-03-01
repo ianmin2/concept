@@ -178,49 +178,6 @@
                <div class="span12">
                 
                 
-                   <!-- OFFICER ADDITION -->
-                   <div class="widget" id="officers">
-
-                       <div class="widget-title" >
-                           <h4><i class="icon-certificate"></i>Police Officer <Registration></Registration></h4>
-                           <span class="tools">
-                               <a href="javascript:;" class="icon-chevron-down"></a>
-
-                           </span>                    
-                       </div>
-
-                       <div class="widget-body">
-                       
-                           <div>
-                               <span class="span4">Officer Name</span>
-                               <input class="span6" id="officer_name" placeholder="Officer Name">
-                           </div>
-
-                           <br>
-                           
-                           <div>
-                               <span class="span4">Officer ID</span>
-                               <input class="span6" id="officer_id" placeholder="Officer ID">
-                           </div>
-
-                           <br>
-                           
-                                                      
-                           <div>
-                               <span class="span4">Station Name</span>
-                               <select id="officer_station" class="span6 get_stations"></select>
-                           </div>
-
-                           <br>
-                           
-                           <div>
-                               <button class="btn btn-lg btn-inverse" id="add_officer"> Register Officer </button>
-                            </div>
-                       
-                       </div>
-                       
-                   </div>
-                   <!-- EO OFFICER ADDITION -->
                    
                  
                    <!-- STATION ADDITION -->
@@ -271,190 +228,7 @@
                    <!-- EO STATION ADDITION -->
                    
                    
-                   <!-- DRIVER ADDITION -->
-                   <div class="widget" id="stations">
-
-                       <div class="widget-title" >
-                           <h4><i class="icon-certificate"></i>Driver Registration</h4>
-                           <span class="tools">
-                               <a href="javascript:;" class="icon-chevron-down"></a>
-
-                           </span>                    
-                       </div>
-
-                       <div class="widget-body">
-
-                           <div>
-                               <span class="span4">Driver Name</span>
-                               <input class="span6" id="licence_owner" placeholder="Driver's Name">
-                           </div>
-
-                           <br>
-
-                           <div>
-                               <span class="span4">Driver's ID</span>
-                               <input class="span6" id="owner_id" placeholder="Driver's ID Number">
-                           </div>
-
-                           <br>
-                           
-                           <div>
-                               <span class="span4">Licence Number</span>
-                               <input class="span6" id="licence_number" placeholder="Licence Number">
-                           </div>
-
-                           <br>
-
-                           <div>
-                               <span class="span4">Licence Class</span>
-                               <input class="span6" id="licence_class" placeholder="Licence Class e.g BCE">
-                           </div>
-
-                           <br>
-                           
-                           <div>
-                               <span class="span4">Licence Year</span>
-                               <input class="span6" id="licence_year" placeholder="Licence Issuance Year">
-                           </div>
-
-                           <br>
-                           
-                           <div>
-                               <span class="span4">Next Licence Expiry</span>
-                               <input class="span6" id="licence_expiry" placeholder="Next Licence Expiry">
-                           </div>
-
-                           <br>
-
-                           <div>
-                               <button id="add_driver" class="btn btn-lg btn-inverse"> Register Driver </button>
-                           </div>
-                           
-                           <br>
-                               <div id="add_driver_response" class=""></div>
-
-                       </div>                    
-
-                   </div>
-                   <!-- EO DRIVER ADDITION -->
                    
-                   <script>
-                       
-                       $(function(){
-                           
-                       });                       
-                   </script>
-                 
-                 
-                 
-                 
-                 
-                 
-                  
-                  <!-- VEHICLE ADDITION -->
-                   <div class="widget" id="vehicles">
-                       
-                      <div class="widget-title" >
-                          <h4><i class="icon-certificate"></i>Vehicle Addition</h4>
-                          <span class="tools">
-                              <a href="javascript:;" class="icon-chevron-down"></a>
-                              
-                          </span>                    
-                      </div>
-                      
-                       
-                      <div class="widget-body">
-                          
-                          <!--
-                          <div>
-                              <span class="span4">Owner Name</span>
-                              <input class="span6" id="owner_name" placeholder="Owner's Name">
-                          </div>
-
-                          <br>
-                          -->    
-                            
-                          <div>
-                              <span class="span4">Owner ID</span>
-                              <input class="span6" id="owner_id" placeholder="Owner's ID number">
-                          </div>
-
-                          <br>                          
-
-                          <div>
-                              <span class="span4">Owner Licence</span>
-                              <input class="span6" id="owner_licence" placeholder="Owner's Driver's licence">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4" > Vehicle Type</span>
-                              <select id="type" class="car_types input-xlarge span6"></select>
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Vehicle make</span>
-                              <input class="span6" id="make" placeholder="Vehicle make">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Vehicle Model</span>
-                              <input class="span6" id="model" placeholder="Vehicle model">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Year of Production</span>
-                              <select class="span6" id="year"></select>
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Vehicle Color</span>
-                              <input class="span6" id="color" placeholder="Vehicle color">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Vehicle Weight</span>
-                              <input class="span6" id="weight" placeholder="Vehicle weight">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Chasis Number</span>
-                              <input class="span6" id="chasis_number" placeholder="chasis number">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <span class="span4">Number Plate</span>
-                              <input class="span6" id="number_plate" placeholder="number plate">
-                          </div>
-
-                          <br>
-
-                          <div>
-                              <button id="add_vehicle" class="btn btn-lg btn-inverse"> REGISTER VEHICLE </button>
-                          </div>
-
-                          <br>
-                          
-                          
-                      </div>
-                     
-                  </div>
-                  <!-- EO VEHICLE ADDITION -->
                   
                </div>
             </div>
@@ -514,14 +288,13 @@
      
        $.getJSON('proc/get_stations.php', 
                  function( data ){
-           
-               var dat = "";
-               stations = data.data.message;
-                console.log(stations)
-                for( station in stations ){
-                    dat += "<option value='"+ stations[station].id +"'> " + stations[station].station_name;
-                }
-                $(".get_stations").html( dat );
+           console.log(data);
+           var dat = "";
+           stations = data.data.message;
+            for( station in stations ){
+                dat += "<option value='"+ stations[station].id +"'> " + stations[station].title;
+            }
+            $(".getStations").html( dat );
        });
        
        

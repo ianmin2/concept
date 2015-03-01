@@ -27,8 +27,25 @@ foreach( $fields as $field ){
 }
 $query = rtrim($query, ',').")";
 
-header("Content-Type:application/json");
-echo $connection->aQuery( $query, true, "Officer Successfully registered.", "Failed to add officer." );
-exit;
+$qry = $connection->query($query,true);
+
+if($qry){
+	
+	/* Fetch the officer id from the "officers" table  */
+	$aCode = $connection->printQueryResults("SELECT id FROM officers WHERE officer_id ='".$_REQUEST['officer_id']."' LIMIT 1", true, false);
+	header("Content-Type:application/json");
+	echo $connection->wrap( $connection->makeResponse("SUCCESS", "Officer Successfully Added. <br> The activation code is <code> ".$aCode[0]["id"]." </code> .", "") );
+	exit;
+	
+}else{
+	
+	/* Display the embarassing message of failure */
+	header("Content-Type:application/json");
+	echo $connection->wrap( $connection->makeResponse( "ERROR", "Failed to add the Officer. <br> ( Check to ensure that He/She is not added already. ) ", "" ) );
+	exit;
+	
+}
+
+
 
 ?>

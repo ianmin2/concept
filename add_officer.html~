@@ -511,17 +511,16 @@
        /* Fill the years select box */
        years("year", __D.getFullYear() -15, __D.getFullYear()  );
        
-     
+       /* Load a list of available stations */
        $.getJSON('proc/get_stations.php', 
                  function( data ){
-           
-               var dat = "";
-               stations = data.data.message;
-                console.log(stations)
-                for( station in stations ){
-                    dat += "<option value='"+ stations[station].id +"'> " + stations[station].station_name;
-                }
-                $(".get_stations").html( dat );
+           console.log(data);
+           var dat = "";
+           stations = data.data.message;
+            for( station in stations ){
+                dat += "<option value='"+ stations[station].id +"'> " + stations[station].title;
+            }
+            $(".getStations").html( dat );
        });
        
        
